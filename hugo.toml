@@ -1,0 +1,81 @@
+baseURL = 'https://muziyuhui666.github.io/'
+locale = 'zh-cn'
+defaultContentLanguage = 'zh'
+title = 'AI Infra 学习笔记'
+theme = 'PaperMod'
+enableRobotsTXT = true
+enableGitInfo = false
+hasCJKLanguage = true
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
+[params]
+  env = 'production'
+  title = 'AI Infra 学习笔记'
+  description = '记录大模型推理、稀疏注意力、vLLM-Ascend 与系统优化。'
+  author = 'muziyuhui666'
+  defaultTheme = 'auto'
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowWordCount = true
+  ShowToc = true
+  TocOpen = true
+  ShowCodeCopyButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowShareButtons = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  displayFullLangName = true
+
+  [params.homeInfoParams]
+    Title = '推理系统，从算法到内核'
+    Content = '这里记录我对大模型推理、Attention、KV Cache、并行策略、vLLM-Ascend 与性能优化的理解和实践。'
+
+  [[params.socialIcons]]
+    name = 'github'
+    url = 'https://github.com/muziyuhui666'
+
+[menu]
+  [[menu.main]]
+    identifier = 'posts'
+    name = '文章'
+    url = '/posts/'
+    weight = 10
+  [[menu.main]]
+    identifier = 'categories'
+    name = '分类'
+    url = '/categories/'
+    weight = 20
+  [[menu.main]]
+    identifier = 'tags'
+    name = '标签'
+    url = '/tags/'
+    weight = 30
+  [[menu.main]]
+    identifier = 'archives'
+    name = '归档'
+    url = '/archives/'
+    weight = 40
+  [[menu.main]]
+    identifier = 'search'
+    name = '搜索'
+    url = '/search/'
+    weight = 50
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

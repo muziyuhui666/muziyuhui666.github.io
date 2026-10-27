@@ -1,0 +1,102 @@
+:root {
+  --theme: #f7f8fa;
+  --entry: #ffffff;
+  --primary: #172033;
+  --secondary: #667085;
+  --tertiary: #e4e7ec;
+  --content: #344054;
+  --code-block-bg: #101828;
+  --code-bg: #eef4ff;
+  --border: #e4e7ec;
+  --brand: #155eef;
+}
+
+.dark {
+  --theme: #0b1220;
+  --entry: #111a2c;
+  --primary: #f2f4f7;
+  --secondary: #98a2b3;
+  --tertiary: #243047;
+  --content: #d0d5dd;
+  --code-block-bg: #060b14;
+  --code-bg: #18243a;
+  --border: #243047;
+  --brand: #84adff;
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 12% 0%, rgba(21, 94, 239, 0.09), transparent 28rem),
+    linear-gradient(180deg, transparent 0, var(--theme) 32rem);
+  font-family: Inter, "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+
+.main { max-width: 860px; }
+.nav { max-width: 1000px; }
+.logo a { letter-spacing: -0.02em; font-weight: 760; }
+
+.first-entry {
+  min-height: 290px;
+  margin-top: 36px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 46px;
+  background: linear-gradient(135deg, rgba(21, 94, 239, 0.11), transparent 62%), var(--entry);
+  box-shadow: 0 24px 70px rgba(16, 24, 40, 0.08);
+}
+
+.first-entry .entry-header h1 {
+  max-width: 700px;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.first-entry .entry-content {
+  max-width: 650px;
+  margin-top: 20px;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.post-entry {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.post-entry:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand);
+  box-shadow: 0 16px 38px rgba(16, 24, 40, 0.08);
+}
+
+.post-title, .post-content h1, .post-content h2, .post-content h3 { letter-spacing: -0.02em; }
+.post-content { font-size: 1.02rem; line-height: 1.86; }
+
+.post-content blockquote {
+  border-inline-start: 4px solid var(--brand);
+  background: rgba(21, 94, 239, 0.06);
+  padding: 1rem 1.25rem;
+  border-radius: 0 12px 12px 0;
+}
+
+.post-content table { display: table; width: 100%; font-size: .92rem; }
+.post-content table th { background: var(--code-bg); }
+.post-content a { color: var(--brand); }
+
+.mermaid-wrap {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--entry);
+}
+
+.mermaid { display: flex; justify-content: center; }
+
+@media (max-width: 700px) {
+  .first-entry { padding: 30px 24px; min-height: 240px; }
+  .post-content table { display: block; overflow-x: auto; }
+}
