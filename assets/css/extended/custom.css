@@ -100,3 +100,51 @@ body {
   .first-entry { padding: 30px 24px; min-height: 240px; }
   .post-content table { display: block; overflow-x: auto; }
 }
+
+
+/* Math: keep long equations readable without breaking the page layout. */
+.post-content .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.65rem 0.25rem;
+  margin: 1.35rem 0;
+}
+
+.post-content .katex {
+  font-size: 1.04em;
+}
+
+.post-content .katex-display > .katex {
+  white-space: nowrap;
+}
+
+/* Mermaid: use the available article width while preserving diagram detail. */
+.post-content .mermaid-wrap {
+  max-width: 100%;
+  overflow: auto;
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.post-content .mermaid svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+.post-content .mermaid .nodeLabel,
+.post-content .mermaid .edgeLabel {
+  line-height: 1.45;
+}
+
+@media (max-width: 700px) {
+  .post-content .katex-display {
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  .post-content .mermaid-wrap {
+    padding: 0.5rem;
+  }
+}
