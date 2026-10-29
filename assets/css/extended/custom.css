@@ -146,5 +146,20 @@ body {
 
   .post-content .mermaid-wrap {
     padding: 0.5rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+  }
+
+  /* Preserve the intrinsic width of wide diagrams on phones.
+     The wrapper scrolls horizontally instead of shrinking labels to unreadable sizes. */
+  .post-content .mermaid {
+    justify-content: flex-start;
+    min-width: max-content;
+  }
+
+  .post-content .mermaid svg {
+    max-width: none;
+    width: auto;
+    flex: 0 0 auto;
   }
 }
