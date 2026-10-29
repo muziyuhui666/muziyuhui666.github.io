@@ -150,16 +150,17 @@ body {
     overscroll-behavior-x: contain;
   }
 
-  /* Preserve the intrinsic width of wide diagrams on phones.
-     The wrapper scrolls horizontally instead of shrinking labels to unreadable sizes. */
-  .post-content .mermaid {
+  /* Preserve detail only for explicitly wide left-to-right diagrams.
+     Other Mermaid diagrams remain responsive and do not gain needless scrolling. */
+  .post-content .mermaid-wrap--wide .mermaid {
     justify-content: flex-start;
     min-width: max-content;
   }
 
-  .post-content .mermaid svg {
+  .post-content .mermaid-wrap--wide .mermaid svg {
     max-width: none;
-    width: auto;
+    min-width: 48rem;
+    width: 48rem;
     flex: 0 0 auto;
   }
 }

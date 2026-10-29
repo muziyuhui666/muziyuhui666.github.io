@@ -63,9 +63,9 @@ $$
 
 其中 $s$ 是历史 Token 位置，$j$ 是 Indexer Head，$w$ 是与当前 Query 有关的权重。得到分数后：
 
-$
+$$
 \mathcal S_t=\operatorname{TopK}_s(I_{t,s},K),\qquad o_t=\operatorname{MLA}(q_t,K_{\mathcal S_t},V_{\mathcal S_t}).
-$
+$$
 
 DeepSeek-V3.2 的典型 `index_topk=2048`。Indexer 选择的 Token 可以来自非常分散的历史位置。
 

@@ -1,4 +1,5 @@
 {{- .Page.Store.Set "hasMermaid" true -}}
-<div class="mermaid-wrap">
+{{- $wide := strings.HasPrefix (strings.TrimSpace .Inner) "flowchart LR" -}}
+<div class="mermaid-wrap{{ if $wide }} mermaid-wrap--wide{{ end }}">
   <pre class="mermaid">{{- .Inner | htmlEscape | safeHTML -}}</pre>
 </div>
